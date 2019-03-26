@@ -26,6 +26,7 @@ int DataBase::zero_check(const std::string& product_name)
 // > 0 - update product on receiving field
 void DataBase::add_product(std::string id) {
 	assert(id.size() == 24);
+	assert(!_handbook.empty());
 
 	std::transform(id.begin(), id.end(), id.begin(), ::towupper);
 	auto product_name = get_products_name(id);
@@ -43,6 +44,7 @@ void DataBase::add_product(std::string id) {
 // < 0 - update product on shipment field
 void DataBase::delete_product(std::string id) {
 	assert(id.size() == 24);
+	assert(!_handbook.empty());
 
 	std::transform(id.begin(), id.end(), id.begin(), ::towupper);
 	auto product_name = get_products_name(id);

@@ -12,4 +12,6 @@ public:
 	virtual void on_shipment(std::string& input_string) = 0;
 
 	virtual void on_clear() = 0;
+
+	virtual std::map<std::string, int> get_products() = 0;
 };
